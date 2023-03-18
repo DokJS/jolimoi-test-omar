@@ -1,12 +1,12 @@
 {
-  "name": "client",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+	"name": "Roman Converter App Client",
+	"version": "1.0.0",
+	"description": "User interface for the Roman Converter App",
+	"main": "index.js",
+	"scripts": {
+		"start": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "Omar Mbengue",
+	"license": "ISC"
 }
