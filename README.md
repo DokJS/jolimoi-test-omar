@@ -22,8 +22,8 @@ To start the front development server
 
 ```
 cd client
-npm install
-npm run start
+open the client folder on visual studio code
+launch the web application by using live server extension
 ```
 ## Guidelines
 
