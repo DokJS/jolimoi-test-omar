@@ -25,3 +25,8 @@ cd client
 npm install
 npm run start
 ```
+
+## Guidelines
+
+- For Test convert by using AJAX request you must set your head on branch step1
+- For test convert by using SSE you must set your head on branch step2
