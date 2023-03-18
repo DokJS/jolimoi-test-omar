@@ -19,7 +19,8 @@ form.addEventListener('submit', (event: SubmitEvent) => {
 					}, 1000)
 				}
 				eventSource.onerror = () => {
-					console.log('error ')
+					alert('An error occured')
+					eventSource.close()
 				}
 			} else {
 				alert('Value must be between 1 and 100')
