@@ -2,21 +2,25 @@ const form = document.getElementById('form') as HTMLFormElement
 const input = document.getElementById('input') as HTMLInputElement
 const button = document.getElementById('button') as HTMLButtonElement
 const result = document.getElementById('result') as HTMLParagraphElement
-const API_URL = 'http://localhost:8000/convert/'
+const API_URL = 'http://localhost:8000/convertsse/'
 
-form.addEventListener('submit', async (event: SubmitEvent) => {
+form.addEventListener('submit', (event: SubmitEvent) => {
 	event.preventDefault()
 	if (input.value !== '') {
 		if (containsOnlyNumber(input.value)) {
 			if (valueIsInRange(input.value)) {
 				result.innerText = 'Loading...'
 				const url = getUrl(API_URL, input.value)
-				const response = await fetch(url)
-				const data = await response.json()
 
-				setTimeout(() => {
-					result.innerText = `Valeur en chiffre romain: ${data.romanValue}`
-				}, 2000)
+				const eventSource = new EventSource(url)
+				eventSource.onmessage = (event: MessageEvent) => {
+					setTimeout(() => {
+						result.innerText = `valeur en romain : ${event.data}`
+					}, 1000)
+				}
+				eventSource.onerror = () => {
+					console.log('error ')
+				}
 			} else {
 				alert('Value must be between 1 and 100')
 			}
